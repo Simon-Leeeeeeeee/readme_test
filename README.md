@@ -10,7 +10,7 @@
 ## 目录
 * [功能特色](#功能特色)
 * [示例程序](#示例程序)
-* [Gradle 依赖](#依赖)
+* [Gradle 依赖](#A依赖)
 * [更新计划](#更新计划)
 * [接口说明](#接口说明)
 * [版本记录](#版本记录)
@@ -43,7 +43,7 @@
 |:---:|:---:|
 |[点此下载](http://fir.im/CodeScanner) 或扫描下面二维码<br/>[![demo](/download.png)](http://fir.im/CodeScanner  "扫码下载示例程序")|[![gif](/demo.gif)](http://fir.im/CodeScanner  "示例效果")|
 
-## 依赖
+## A依赖
 
 在module的`build.gradle`中添加如下代码
 
