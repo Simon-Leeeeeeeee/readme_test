@@ -1,315 +1,155 @@
-:running:BGAQRCode-Android:running:
-============
+# :star2:&nbsp;CodeScanner
 
+一个Android平台上用来解析条码及二维码的框架。目前采用zbar解析图像数据，兼容` API14 `及以上版本。
+
+|**Author**|**Simon Lee**|
+|---|---|
+|**E-mail**|**jmlixiaomeng@163.com**|
+
+****
 ## 目录
-* [功能介绍](#功能介绍)
-* [常见问题](#常见问题)
-* [效果图与示例 apk](#效果图与示例-apk)
-* [Gradle 依赖](#gradle-依赖)
-* [布局文件](#布局文件)
-* [自定义属性说明](#自定义属性说明)
+* [功能特色](#功能特色)
+* [示例程序](#示例程序)
+* [Gradle依赖](#gradle依赖)
+* [更新计划](#更新计划)
 * [接口说明](#接口说明)
-* [关于我](#关于我)
+* [版本记录](#版本记录)
 
-## Gradle 依赖
+## 功能特色
 
-## 功能介绍
-根据[之前公司](http://www.iqegg.com)的产品需求，参考 [barcodescanner](https://github.com/dm77/barcodescanner) 改的，希望能帮助到有生成二维码、扫描二维码、识别图片二维码等需求的猿友。修改幅度较大，也就没准备针对 [barcodescanner](https://github.com/dm77/barcodescanner) 库提交PR。
+1. 支持新旧两版CameraAPI
 
-- [x] ZXing 生成可自定义颜色、带 logo 的二维码
-- [x] ZXing 扫描二维码
-- [x] ZXing 识别图库中的二维码图片
-- [x] 可以设置用前置摄像头扫描
-- [x] 可以控制闪光灯，方便夜间使用
-- [x] 可以定制各式各样的扫描框
-- [x] 可定制全屏扫描或只识别扫描框区域内的二维码
-- [x] ZBar 扫描二维码「已解决中文乱码问题」
+2. zbar解码，更快更精准
 
-## 常见问题
-#### 1.部分手机无法扫描出结果，扫描预览界面二维码被压缩
+3. 扫码框随心定制，动画不卡顿
 
-使用的时候将 Toolbar 或者其他 View 盖在 ZBarView 或者 ZXingView 的上面，让 ZBarView 或者 ZXingView 填充屏幕宽高。[ZXing 布局文件参考](https://github.com/bingoogolapple/BGAQRCode-Android/blob/master/zxingdemo/src/main/res/layout/activity_test_scan.xml) [ZBar 布局文件参考](https://github.com/bingoogolapple/BGAQRCode-Android/blob/master/zbardemo/src/main/res/layout/activity_test_scan.xml)
+4. layout任意尺寸，预览不变形
 
-#### 2.出现黑屏
+5. camera异步开启，不占主线程
 
-在自己项目里集成时记得在 onDestroy 方法中调用 mQRCodeView.onDestroy()，在 onStop 方法中调用 mQRCodeView.stopCamera()，否则会出现黑屏。如果没执行前面提到的这两个方法出现黑屏的话，那你就只能加上前面提到的两个方法后，重启手机后重新运行了
+6. 可配置扫码框内识别，精准无误差
 
-#### 3.Gradle 依赖时提示找不到cn.bingoogolapple:bga-libraryname:「latestVersion」
+7. 前后台、横竖屏任意切，绝对不闪退
 
-[ ![Download](https://api.bintray.com/packages/bingoogolapple/maven/bga-qrcode-core/images/download.svg) ](https://bintray.com/bingoogolapple/maven/bga-qrcode-core/_latestVersion)「latestVersion」指的是左边这个 Download 徽章后面的「数字」，请自行替换。***请不要再来问我「latestVersion」是什么了***
+8. TextureReader取代ImageReader，预览不丢帧
 
-## 效果图与示例 apk
+9. ZBarDecoder支持图像格式及精度控制，过滤脏数据
 
-![zbar109](https://cloud.githubusercontent.com/assets/8949716/17475203/5d788730-5d8c-11e6-836a-61e885e05453.gif)
-![zxingbarcode109](https://cloud.githubusercontent.com/assets/8949716/17475222/76339bd4-5d8c-11e6-934f-96db6917f69b.gif)
-![zxingdecode109](https://cloud.githubusercontent.com/assets/8949716/17475235/8c03b2be-5d8c-11e6-931d-a50942a8ab75.gif)
-![zxingqrcode109](https://cloud.githubusercontent.com/assets/8949716/17475249/a551cc06-5d8c-11e6-85dc-4e2e07051cae.gif)
-![iqegg](https://cloud.githubusercontent.com/assets/8949716/17475267/bd9c0a60-5d8c-11e6-8487-c732306debe2.gif)
+10. 自动对焦很简单，指哪扫哪
 
-| [点击下载 ZXingDemo.apk](http://fir.im/ZXingDemo)或扫描下面的二维码安装 | [点击下载 ZBarDemo.apk](http://fir.im/ZBarDemo)或扫描下面的二维码安装 |
-| :------------: | :------------: |
-| ![ZXingDemo apk文件二维码](http://7xk9dj.com1.z0.glb.clouddn.com/qrcode/zxingdemoapk.png) | ![ZBarDemo apk文件二维码](http://7xk9dj.com1.z0.glb.clouddn.com/qrcode/zbardemoapk.png) |
+## 示例程序
 
-[ ![Download](https://api.bintray.com/packages/bingoogolapple/maven/bga-qrcode-core/images/download.svg) ](https://bintray.com/bingoogolapple/maven/bga-qrcode-core/_latestVersion)「latestVersion」指的是左边这个 Download 徽章后面的「数字」，请自行替换。***请不要再来问我「latestVersion」是什么了***
+|Demo下载|示例效果|
+|:---:|:---:|
+|[点此下载](http://fir.im/CodeScanner) 或扫描下面二维码<br/>[![demo](/download.png)](http://fir.im/CodeScanner  "扫码下载示例程序")|[![gif](/demo.gif)](http://fir.im/CodeScanner  "示例效果")|
 
->ZXing
+## Gradle依赖
 
-```groovy
-dependencies {
-    implementation 'cn.bingoogolapple:bga-qrcode-zxing:latestVersion'
-}
-```
->ZBar
+在module的`build.gradle`中添加如下代码
 
-```groovy
-dependencies {
-    implementation 'cn.bingoogolapple:bga-qrcode-zbar:latestVersion'
-}
-```
-## 布局文件
->ZXing
+    dependencies {
+        implementation 'cn.simonlee.codescanner:zbar:1.1.1'
+    }
 
-```xml
-<cn.bingoogolapple.qrcode.zxing.ZXingView
-    android:id="@+id/zxingview"
-    style="@style/MatchMatch"
-    app:qrcv_animTime="1000"
-    app:qrcv_borderColor="@android:color/white"
-    app:qrcv_borderSize="1dp"
-    app:qrcv_cornerColor="@color/colorPrimaryDark"
-    app:qrcv_cornerLength="20dp"
-    app:qrcv_cornerSize="3dp"
-    app:qrcv_maskColor="#33FFFFFF"
-    app:qrcv_rectWidth="200dp"
-    app:qrcv_scanLineColor="@color/colorPrimaryDark"
-    app:qrcv_scanLineSize="1dp"
-    app:qrcv_topOffset="90dp" />
-```
->ZBar
-
-```xml
-<cn.bingoogolapple.qrcode.zbar.ZBarView
-    android:id="@+id/zbarview"
-    style="@style/MatchMatch"
-    app:qrcv_animTime="1000"
-    app:qrcv_borderColor="@android:color/white"
-    app:qrcv_borderSize="1dp"
-    app:qrcv_cornerColor="@color/colorPrimaryDark"
-    app:qrcv_cornerLength="20dp"
-    app:qrcv_cornerSize="3dp"
-    app:qrcv_isShowDefaultScanLineDrawable="true"
-    app:qrcv_maskColor="#33FFFFFF"
-    app:qrcv_rectWidth="200dp"
-    app:qrcv_scanLineColor="@color/colorPrimaryDark"
-    app:qrcv_topOffset="90dp" />
-```
-
-## 自定义属性说明
-
-属性名 | 说明 | 默认值
-:----------- | :----------- | :-----------
-qrcv_topOffset         | 扫描框距离 toolbar 底部的距离        | 90dp
-qrcv_cornerSize         | 扫描框边角线的宽度        | 3dp
-qrcv_cornerLength         | 扫描框边角线的长度        | 20dp
-qrcv_cornerColor         | 扫描框边角线的颜色        | @android:color/white
-qrcv_rectWidth         | 扫描框的宽度        | 200dp
-qrcv_barcodeRectHeight         | 条码扫样式描框的高度        | 140dp
-qrcv_maskColor         | 除去扫描框，其余部分阴影颜色        | #33FFFFFF
-qrcv_scanLineSize         | 扫描线的宽度        | 1dp
-qrcv_scanLineColor         | 扫描线的颜色「扫描线和默认的扫描线图片的颜色」        | @android:color/white
-qrcv_scanLineMargin         | 扫描线距离上下或者左右边框的间距        | 0dp
-qrcv_isShowDefaultScanLineDrawable         | 是否显示默认的图片扫描线「设置该属性后 qrcv_scanLineSize 将失效，可以通过 qrcv_scanLineColor 设置扫描线的颜色，避免让你公司的UI单独给你出特定颜色的扫描线图片」        | false
-qrcv_customScanLineDrawable         | 扫描线的图片资源「默认的扫描线图片样式不能满足你的需求时使用，设置该属性后 qrcv_isShowDefaultScanLineDrawable、qrcv_scanLineSize、qrcv_scanLineColor 将失效」        | null
-qrcv_borderSize         | 扫描边框的宽度        | 1dp
-qrcv_borderColor         | 扫描边框的颜色        | @android:color/white
-qrcv_animTime         | 扫描线从顶部移动到底部的动画时间「单位为毫秒」        | 1000
-qrcv_isCenterVertical         | 扫描框是否垂直居中，该属性为true时会忽略 qrcv_topOffset 属性        | false
-qrcv_toolbarHeight         | Toolbar 的高度，通过该属性来修正由 Toolbar 导致扫描框在垂直方向上的偏差        | 0dp
-qrcv_isBarcode         | 是否是扫条形码        | false
-qrcv_tipText         | 提示文案        | null
-qrcv_tipTextSize         | 提示文案字体大小        | 14sp
-qrcv_tipTextColor         | 提示文案颜色        | @android:color/white
-qrcv_isTipTextBelowRect         | 提示文案是否在扫描框的底部        | false
-qrcv_tipTextMargin         | 提示文案与扫描框之间的间距        | 20dp
-qrcv_isShowTipTextAsSingleLine         | 是否把提示文案作为单行显示        | false
-qrcv_isShowTipBackground         | 是否显示提示文案的背景        | false
-qrcv_tipBackgroundColor         | 提示文案的背景色        | #22000000
-qrcv_isScanLineReverse         | 扫描线是否来回移动        | true
-qrcv_isShowDefaultGridScanLineDrawable         | 是否显示默认的网格图片扫描线        | false
-qrcv_customGridScanLineDrawable         | 扫描线的网格图片资源        | nulll
-qrcv_isOnlyDecodeScanBoxArea         | 是否只识别扫描框区域的二维码        | false
+## 更新计划
+-  解决TextureView尺寸变化及padding&margin带来的一些问题。
+-  增加环境亮度监测，提示闪光灯开启。
+-  增加本地图片识别功能。
+-  增加Zxing支持。
+-  增加二维码生成功能。
 
 ## 接口说明
+#### &nbsp;&nbsp;&nbsp;&nbsp;:cat:&nbsp;&nbsp;**AdjustTextureView**
+    继承自TextureView，用于渲染camera预览图像，可根据图像参数进行适配以解决形变问题
+|接口|功能说明|参数及返回值|备注|
+|:---:|:---:|:---:|:---:|
+|**setImageFrameMatrix(int frameWidth, int frameHeight, int frameDegree)**|根据图像帧宽高及角度进行显示校正|**frameWidth:** 图像帧的宽<br/>**frameHeight:** 图像帧的高<br/>**frameDegree:** 图像旋转角度|　　|
+|**setImageFrameMatrix()**|根据图像帧宽高及角度进行显示校正|||
 
->QRCodeView
+#### &nbsp;&nbsp;&nbsp;&nbsp;:dog:&nbsp;&nbsp;**ScannerFrameView**
+    继承自View，用于绘制扫描框
+|接口|功能说明|参数及返回值|备注|
+|:---:|:---:|:---:|:---:|
+|**setFrameWidthRatio(float frameWidthRatio)**|设置view宽占比（相对父容器的宽）|**frameWidthRatio:** 宽占比|仅宽为**wrap_content**时有效，xml中可通过**frame_widthRatio**属性配置|
+|**setFrameHeightRatio(float frameHeightRatio)**|设置view高占比（相对父容器的高）|**frameHeightRatio:** 高占比|仅高为**wrap_content**时有效，xml中可通过**frame_heightRatio**属性配置|
+|**setFrameWHRatio(float frameWHRatio)**|设置view宽高比|**frameWHRatio:** 宽高比|仅当宽或高为**wrap_content**且未设置父占比时有效，xml中可通过**frame_whRatio**属性配置|
+|**setFrameLineVisible(boolean frameLineVisible)**|设置是否显示边框|**frameLineVisible:** true显示/false隐藏|xml中可通过**frameLine_visible**属性配置|
+|**setFrameLineWidth(int frameLineWidth)**|设置边框宽度|**frameLineWidth:** 边框宽|xml中可通过**frameLine_width**属性配置|
+|**setFrameLineColor(int frameLineColor)**|设置边框颜色|**frameLineColor:** 十六进制色值|xml中可通过**frameLine_color**属性配置|
 
-```java
-/**
- * 设置扫描二维码的代理
- *
- * @param delegate 扫描二维码的代理
- */
-public void setDelegate(Delegate delegate)
+    未完待续，近日完善。。
+    
+#### &nbsp;&nbsp;&nbsp;&nbsp;:dog:&nbsp;&nbsp;**MaskRelativeLayout**
+    继承自RelativeLayout，用于绘制扫描框外部阴影
+|接口|功能说明|参数及返回值|备注|
+|:---:|:---:|:---:|:---:|
+|**setFrameOutsideColor(int frameOutsideColor)**|设置扫描框外部填充色|**frameOutsideColor:** 十六进制色值|xml中可通过**frame_outsideColor**属性配置|
 
-/**
- * 显示扫描框
- */
-public void showScanRect()
+    未完待续，近日完善。。
 
-/**
- * 隐藏扫描框
- */
-public void hiddenScanRect()
+## 版本记录
 
-/**
- * 打开后置摄像头开始预览，但是并未开始识别
- */
-public void startCamera()
+-  V1.1.1   `2018/04/16`
 
-/**
- * 打开指定摄像头开始预览，但是并未开始识别
- *
- * @param cameraFacing  Camera.CameraInfo.CAMERA_FACING_BACK or Camera.CameraInfo.CAMERA_FACING_FRONT
- */
-public void startCamera(int cameraFacing)
+    1. `ScannerFrameView`增加高占比属性，可设置相对父容器高的占比。
+    2. 修改包名为`com.simonlee.demo.camerascanner`。
 
-/**
- * 关闭摄像头预览，并且隐藏扫描框
- */
-public void stopCamera()
+-  V1.1.0   `2018/04/16`
 
-/**
- * 延迟1.5秒后开始识别
- */
-public void startSpot()
+    1. 重写`ZBarDecoder`，解决单线程池可能引起的条码解析延迟问题。
+    2. 解决`OldCameraScanner`扫描框区域识别异常的问题。
 
-/**
- * 延迟delay毫秒后开始识别
- *
- * @param delay
- */
-public void startSpotDelay(int delay)
+-  V1.0.9   `2018/04/14`
 
-/**
- * 停止识别
- */
-public void stopSpot()
+    1. 解决`NewCameraScanner`扫描框区域识别异常的问题。
+    2. 解决连续快速旋转屏幕时`NewCameraScanner`出现异常的问题。
 
-/**
- * 停止识别，并且隐藏扫描框
- */
-public void stopSpotAndHiddenRect()
+-  V1.0.8   `2018/04/13`
 
-/**
- * 显示扫描框，并且延迟1.5秒后开始识别
- */
-public void startSpotAndShowRect()
+    1. `AutoFixTextureView`更名为`AdjustTextureView`，重写图像校正方式。
+    2. `Camera2Scanner`更名为`NewCameraScanner`。
+    3. 新增`OldCameraScanner`实现对`Android5.0`以下的支持。
+    4. 下调minSdkVersion至14。
+    5. 解决前后台切换，横竖屏切换可能产生的异常。
+    6. `NewCameraScanner`中取消ImageReader的支持。
 
-/**
- * 打开闪光灯
- */
-public void openFlashlight()
+-  V1.0.7   `2018/04/10`
 
-/**
- * 关闭散光灯
- */
-public void closeFlashlight()
-```
+    1. 调整扫描框宽高计算方式，新增`MaskConstraintLayout`布局。
+    2. 优化`Camera2Scanner`，解决后台切换导致的闪退问题。
 
->QRCodeView.Delegate   扫描二维码的代理
+-  V1.0.6   `2018/04/09`
 
-```java
-/**
- * 处理扫描结果
- *
- * @param result
- */
-void onScanQRCodeSuccess(String result)
+    1. 调整代码结构，将扫码核心从app移植到zbar中。
 
-/**
- * 处理打开相机出错
- */
-void onScanQRCodeOpenCameraError()
-```
+-  V1.0.5   `2018/03/29`
 
->QRCodeDecoder  解析二维码图片。几个重载方法都是耗时操作，请在子线程中调用。
+    1. 增加帧数据的最大尺寸限制，避免因过高像素导致Zbar解析二维码失败。
+    2. 屏蔽ZBar对DataBar(RSS-14)格式条码的支持，此格式实用性不高，且易产生误判。
 
-```java
-/**
- * 同步解析本地图片二维码。该方法是耗时操作，请在子线程中调用。
- *
- * @param picturePath 要解析的二维码图片本地路径
- * @return 返回二维码图片里的内容 或 null
- */
-public static String syncDecodeQRCode(String picturePath)
+-  V1.0.4   `2018/03/27`
 
-/**
- * 同步解析bitmap二维码。该方法是耗时操作，请在子线程中调用。
- *
- * @param bitmap 要解析的二维码图片
- * @return 返回二维码图片里的内容 或 null
- */
-public static String syncDecodeQRCode(Bitmap bitmap)
-```
+    1. 修改`ZBarDecoder`，修复多线程可能的空指针异常。
+    2. 修改`GraphicDecoder`，EGL14替换EGL10，解决部分机型不兼容的问题；解决多线程可能的空指针异常。
 
->QRCodeEncoder  创建二维码图片。几个重载方法都是耗时操作，请在子线程中调用。
+-  V1.0.3   `2018/03/23`
 
-```java
-/**
- * 同步创建黑色前景色、白色背景色的二维码图片。该方法是耗时操作，请在子线程中调用。
- *
- * @param content 要生成的二维码图片内容
- * @param size    图片宽高，单位为px
- */
-public static Bitmap syncEncodeQRCode(String content, int size)
+    1. 新增`TextureReader`，通过双缓冲纹理获取帧数据进行回调，代替ImageReader的使用。
+    2. 修改`GraphicDecoder`，handler放到子类中去操作。
 
-/**
- * 同步创建指定前景色、白色背景色的二维码图片。该方法是耗时操作，请在子线程中调用。
- *
- * @param content         要生成的二维码图片内容
- * @param size            图片宽高，单位为px
- * @param foregroundColor 二维码图片的前景色
- */
-public static Bitmap syncEncodeQRCode(String content, int size, int foregroundColor)
+-  V1.0.2   `2018/03/14`
 
-/**
- * 同步创建指定前景色、白色背景色、带logo的二维码图片。该方法是耗时操作，请在子线程中调用。
- *
- * @param content         要生成的二维码图片内容
- * @param size            图片宽高，单位为px
- * @param foregroundColor 二维码图片的前景色
- * @param logo            二维码图片的logo
- */
-public static Bitmap syncEncodeQRCode(String content, int size, int foregroundColor, Bitmap logo)
+    1. 新增抽象类`GraphicDecoder`，将条码解析模块进行抽离。
+    2. 新增`ZBarDecoder`，采用ZBar解析条码，并增加解析类型及解析精度设置。
+    3. 修改`ScannerFrameView`，扫描线动画由属性动画实现。
+    4. 修改`Camera2Scanner`，修复释放相机可能导致的异常，增加扫描框区域设置。
+    5. 其他微调。
 
-/**
- * 同步创建指定前景色、指定背景色、带logo的二维码图片。该方法是耗时操作，请在子线程中调用。
- *
- * @param content         要生成的二维码图片内容
- * @param size            图片宽高，单位为px
- * @param foregroundColor 二维码图片的前景色
- * @param backgroundColor 二维码图片的背景色
- * @param logo            二维码图片的logo
- */
-public static Bitmap syncEncodeQRCode(String content, int size, int foregroundColor, int backgroundColor, Bitmap logo)
-```
+-  V1.0.1   `2018/02/09`
 
-#### 详细用法请查看[ZBarDemo](https://github.com/bingoogolapple/BGAQRCode-Android/tree/master/zbardemo):feet:
+    1. 新增`ScannerFrameLayout`，为`RelativeLayout`的子类，可对扫描框的位置和大小进行设置。
+    2. 修改`ScannerFrameView`，可对扫描框内部进行定制。
+    
+-  V1.0.0   `2018/02/03`
 
-#### 详细用法请查看[ZXingDemo](https://github.com/bingoogolapple/BGAQRCode-Android/tree/master/zxingdemo):feet:
-
-## 关于我
-
-| 新浪微博 | 个人主页 | 邮箱 | BGA系列开源库QQ群
-| ------------ | ------------- | ------------ | ------------ |
-| <a href="http://weibo.com/bingoogol" target="_blank">bingoogolapple</a> | <a  href="http://www.bingoogolapple.cn" target="_blank">bingoogolapple.cn</a>  | <a href="mailto:bingoogolapple@gmail.com" target="_blank">bingoogolapple@gmail.com</a> | ![BGA_CODE_CLUB](http://7xk9dj.com1.z0.glb.clouddn.com/BGA_CODE_CLUB.png?imageView2/2/w/200) |
-
-## 打赏支持
-
-如果您觉得 BGA 系列开源库帮你节省了大量的开发时间，请扫描下方的二维码随意打赏，要是能打赏个 10.24 :monkey_face:就太:thumbsup:了。您的支持将鼓励我继续创作:octocat:
-
-如果您目前正打算购买通往墙外的梯子，可以使用我的邀请码「YFQ9Q3B」购买 [Lantern](https://github.com/getlantern/forum)，双方都赠送三个月的专业版使用时间:beers:
-
-<p align="center">
-  <img src="http://7xk9dj.com1.z0.glb.clouddn.com/bga_pay.png" width="450">
-</p>
+    初次提交代码。
