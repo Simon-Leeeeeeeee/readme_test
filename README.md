@@ -61,7 +61,7 @@
 
 |接口|功能说明|参数|返回值|备注|
 |:---:|:---:|:---:|:---:|:---:|
-|**setImageFrameMatrix(int frameWidth, int frameHeight, int frameDegree)**|根据图像帧宽高及角度进行显示校正|frameWidth: 图像帧的宽<br/></br>frameHeight: 图像帧的高<br/></br>frameDegree: 图像旋转角度|||
+|**setImageFrameMatrix(int frameWidth, int frameHeight, int frameDegree)**|根据图像帧宽高及角度进行显示校正|frameWidth: 图像帧的宽<br/>frameHeight: 图像帧的高<br/>frameDegree: 图像旋转角度|||
 |**setImageFrameMatrix()**|根据图像帧宽高及角度进行显示校正||||
 
 -  解决TextureView尺寸变化及padding&margin带来的一些问题。
