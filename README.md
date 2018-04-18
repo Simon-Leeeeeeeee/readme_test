@@ -37,18 +37,9 @@
 
 ## 示例程序
 
-|Demo下载|gif效果|&nbsp; |
-|:---:|----|:---:|
-|[点击下载示例APK](http://fir.im/CodeScanner) 或扫描下面二维码<br/></br>![CodeScanner演示gif](https://github.com/Simon-Leeeeeeeee/CodeScanner/blob/master/demo.gif)|`[![weibo-logo]](http://weibo.com/linpiaochen)`|[![weibo-logo]](http://weibo.com/linpiaochen)|
-|2|`[![](/img/zhihu.png "我的知乎，欢迎关注")][zhihu]`|[![](/img/zhihu.png "我的知乎，欢迎关注")][zhihu]|
-|3|`[![csdn-logo]][csdn]`|[![csdn-logo]][csdn]|
-|`[我的简介](/example/profile.md)`|[我的简介](/example/profile.md  "悬停显示")|
-|`[Book](./Book)`|[Book](/Book)|
-
- [点击下载 CodeScanner.apk](http://fir.im/CodeScanner)或扫描下面的二维码安装
-
-[![CodeScanner演示gif](https://github.com/Simon-Leeeeeeeee/CodeScanner/blob/master/demo.gif)](http://www.baidu.com/  "悬停显示")
-![CodeScanner.apk二维码](https://github.com/Simon-Leeeeeeeee/CodeScanner/blob/master/download.png)
+|Demo下载|示例效果|
+|:---|:---:|
+|[点此下载](http://fir.im/CodeScanner) 或扫描下面二维码<br/></br>[![demo](/download.png)](http://fir.im/CodeScanner  "扫码下载示例程序")|[![gif](/demo.gif)](http://fir.im/CodeScanner  "示例效果")|
 
 ## 更新计划
 -  解决TextureView尺寸变化及padding&margin带来的一些问题。
