@@ -64,11 +64,18 @@
 |**setImageFrameMatrix(int frameWidth, int frameHeight, int frameDegree)**|根据图像帧宽高及角度进行显示校正|**frameWidth:** 图像帧的宽<br/>**frameHeight:** 图像帧的高<br/>**frameDegree:** 图像旋转角度|　　　|　　|
 |**setImageFrameMatrix()**|根据图像帧宽高及角度进行显示校正||||
 
+#### &nbsp;&nbsp;&nbsp;&nbsp;:dog:&nbsp;&nbsp;**ScannerFrameView**
+    继承自View，用于绘制扫描框
+|接口|功能说明|参数|返回值|备注|
+|:---:|:---:|:---:|:---:|:---:|
+|**setFrameWidthRatio(float frameWidthRatio)**|设置扫描框宽占比（相对父容器的宽）|**frameWidthRatio:** 宽占比|　　　|xml中可通过**frame_widthRatio**属性配置|
+|**setFrameHeightRatio(float frameHeightRatio)**|设置扫描框高占比（相对父容器的高）|**frameHeightRatio:** 高占比|　　　|xml中可通过**frame_heightRatio**属性配置|
+
 #### &nbsp;&nbsp;&nbsp;&nbsp;:dog:&nbsp;&nbsp;**MaskRelativeLayout**
     继承自RelativeLayout，用于绘制扫描框外部阴影
 |接口|功能说明|参数|返回值|备注|
 |:---:|:---:|:---:|:---:|:---:|
-|**setFrameOutsideColor(int frameOutsideColor)**|设置扫描框外部填充色|**frameOutsideColor:** 十六进制色值|　　　|xml中可通过frame_outsideColor属性配置|
+|**setFrameOutsideColor(int frameOutsideColor)**|设置扫描框外部填充色|**frameOutsideColor:** 十六进制色值|　　　|xml中可通过**frame_outsideColor**属性配置|
 
 
 ## 版本记录
