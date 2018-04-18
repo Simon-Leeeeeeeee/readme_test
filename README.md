@@ -1,4 +1,4 @@
-# :star2: CodeScanner
+# :star2:&nbsp;CodeScanner
 
 一个Android平台上用来解析条码及二维码的框架。目前采用zbar解析图像数据，兼容` API14 `及以上版本。
 
@@ -40,7 +40,7 @@
 
 |Demo下载|示例效果|
 |:---:|:---:|
-|[点此下载](http://fir.im/CodeScanner) 或扫描下面二维码<br/></br>[![demo](/download.png)](http://fir.im/CodeScanner  "扫码下载示例程序")|[![gif](/demo.gif)](http://fir.im/CodeScanner  "示例效果")|
+|[点此下载](http://fir.im/CodeScanner) 或扫描下面二维码<br/>[![demo](/download.png)](http://fir.im/CodeScanner  "扫码下载示例程序")|[![gif](/demo.gif)](http://fir.im/CodeScanner  "示例效果")|
 
 ## Gradle依赖
 在module的`build.gradle`中添加如下代码
@@ -57,18 +57,19 @@
 -  增加二维码生成功能。
 
 ## 接口说明
-&nbsp;&nbsp;&nbsp;&nbsp;:cat:&nbsp;&nbsp;**AdjustTextureView**
-
+#### &nbsp;&nbsp;&nbsp;&nbsp;:cat:&nbsp;&nbsp;**AdjustTextureView**
+    继承自TextureView，用于渲染camera预览图像，可根据图像参数进行适配以解决形变问题
 |接口|功能说明|参数|返回值|备注|
 |:---:|:---:|:---:|:---:|:---:|
-|**setImageFrameMatrix(int frameWidth, int frameHeight, int frameDegree)**|根据图像帧宽高及角度进行显示校正|frameWidth: 图像帧的宽<br/>frameHeight: 图像帧的高<br/>frameDegree: 图像旋转角度|　　　|　　|
+|**setImageFrameMatrix(int frameWidth, int frameHeight, int frameDegree)**|根据图像帧宽高及角度进行显示校正|**frameWidth:** 图像帧的宽<br/>**frameHeight:** 图像帧的高<br/>**frameDegree:** 图像旋转角度|　　　|　　|
 |**setImageFrameMatrix()**|根据图像帧宽高及角度进行显示校正||||
 
--  解决TextureView尺寸变化及padding&margin带来的一些问题。
--  增加环境亮度监测，提示闪光灯开启。
--  增加本地图片识别功能。
--  增加Zxing支持。
--  增加二维码生成功能。
+#### &nbsp;&nbsp;&nbsp;&nbsp;:dog:&nbsp;&nbsp;**MaskRelativeLayout**
+    继承自RelativeLayout，用于绘制扫描框外部阴影
+|接口|功能说明|参数|返回值|备注|
+|:---:|:---:|:---:|:---:|:---:|
+|**setFrameOutsideColor(int frameOutsideColor)**|设置扫描框外部填充色|**frameOutsideColor:** 十六进制色值|　　　|xml中可通过frame_outsideColor属性配置|
+
 
 ## 版本记录
 
