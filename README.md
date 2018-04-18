@@ -43,7 +43,7 @@
 |[点此下载](http://fir.im/CodeScanner) 或扫描下面二维码<br/></br>[![demo](/download.png)](http://fir.im/CodeScanner  "扫码下载示例程序")|[![gif](/demo.gif)](http://fir.im/CodeScanner  "示例效果")|
 
 ## Gradle依赖
-在module的build.gradle中添加如下代码
+在module的`build.gradle`中添加如下代码
 
     dependencies {
         implementation 'cn.simonlee.codescanner:zbar:1.1.1'
@@ -57,6 +57,13 @@
 -  增加二维码生成功能。
 
 ## 接口说明
+&nbsp;&nbsp;&nbsp;&nbsp;:cat:&nbsp;&nbsp;**AdjustTextureView**
+
+|接口|功能说明|参数|返回值|备注|
+|:---:|:---:|:---:|:---:|:---:|
+|**setImageFrameMatrix(int frameWidth, int frameHeight, int frameDegree)**|根据图像帧宽高及角度进行显示校正|frameWidth: 图像帧的宽<br/></br>frameHeight: 图像帧的高<br/></br>frameDegree: 图像旋转角度|||
+|**setImageFrameMatrix()**|根据图像帧宽高及角度进行显示校正||||
+
 -  解决TextureView尺寸变化及padding&margin带来的一些问题。
 -  增加环境亮度监测，提示闪光灯开启。
 -  增加本地图片识别功能。
