@@ -38,7 +38,7 @@
 ## 示例程序
 
 |Demo下载|示例效果|
-|:---|:---:|
+|:---:|:---:|
 |[点此下载](http://fir.im/CodeScanner) 或扫描下面二维码<br/></br>[![demo](/download.png)](http://fir.im/CodeScanner  "扫码下载示例程序")|[![gif](/demo.gif)](http://fir.im/CodeScanner  "示例效果")|
 
 ## 更新计划
