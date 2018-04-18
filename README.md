@@ -1,9 +1,11 @@
 # :star2: CodeScanner
+
 一个Android平台上用来解析条码及二维码的框架。目前采用zbar解析图像数据，兼容` API14 `及以上版本。
 
 |Author|Simon Lee|
 |---|---|
 |E-mail|jmlixiaomeng@163.com|
+
 ****
 ## 目录
 * [功能特色](#功能特色)
@@ -13,25 +15,25 @@
 
 ## 功能特色
 
--  支持新旧两版CameraAPI
+1. 支持新旧两版CameraAPI
 
--  zbar解码，更快更精准
+2. zbar解码，更快更精准
 
--  扫码框随心定制，动画不卡顿
+3. 扫码框随心定制，动画不卡顿
 
--  layout任意尺寸，预览不变形
+4. layout任意尺寸，预览不变形
 
--  camera异步开启，不占主线程
+5. camera异步开启，不占主线程
 
--  可配置扫码框内识别，精准无误差
+6. 可配置扫码框内识别，精准无误差
 
--  前后台、横竖屏任意切，绝对不闪退
+7. 前后台、横竖屏任意切，绝对不闪退
 
--  TextureReader取代ImageReader，预览不丢帧
+8. TextureReader取代ImageReader，预览不丢帧
 
--  ZBarDecoder支持图像格式及精度控制，过滤脏数据
+9. ZBarDecoder支持图像格式及精度控制，过滤脏数据
 
--  自动对焦很简单，指哪扫哪
+10. 自动对焦很简单，指哪扫哪
 
 ## 示例程序
  [点击下载 CodeScanner.apk](http://fir.im/CodeScanner)或扫描下面的二维码安装
