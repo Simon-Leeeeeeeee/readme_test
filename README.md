@@ -68,8 +68,10 @@
     继承自View，用于绘制扫描框
 |接口|功能说明|参数及返回值|备注|
 |:---:|:---:|:---:|:---:|
-|**setFrameWidthRatio(float frameWidthRatio)**|设置扫描框宽占比（相对父容器的宽）|**frameWidthRatio:** 宽占比|xml中可通过**frame_widthRatio**属性配置|
-|**setFrameHeightRatio(float frameHeightRatio)**|设置扫描框高占比（相对父容器的高）|**frameHeightRatio:** 高占比|xml中可通过**frame_heightRatio**属性配置|
+|**setFrameWidthRatio(float frameWidthRatio)**|设置扫描框宽占比（相对父容器的宽）|**frameWidthRatio:** 宽占比|仅宽为**wrap_content**时有效，xml中可通过**frame_widthRatio**属性配置|
+|**setFrameHeightRatio(float frameHeightRatio)**|设置扫描框高占比（相对父容器的高）|**frameHeightRatio:** 高占比|仅高为**wrap_content**时有效，xml中可通过**frame_heightRatio**属性配置|
+|**setFrameWHRatio(float frameWHRatio)**|设置扫描框宽高比|**frameWHRatio:** 宽高比|仅当宽或高为**wrap_content**且未设置父占比时有效，xml中可通过**frame_whRatio**属性配置|
+|**setFrameLineVisible(float frameLineVisible)**|设置是否显示边框|**frameLineVisible:** true显示/false隐藏||
 
 #### &nbsp;&nbsp;&nbsp;&nbsp;:dog:&nbsp;&nbsp;**MaskRelativeLayout**
     继承自RelativeLayout，用于绘制扫描框外部阴影
