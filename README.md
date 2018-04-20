@@ -111,9 +111,6 @@
     很 有两个实体类OldCameraScanner和NewCameraScanner，NewCameraScanner仅支持API21及以上高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见到您
     祝您，早上好，中午好，下午好，晚安
 
-    camera接口类，对外提供camera支持。
-    有两个实体类OldCameraScanner和NewCameraScanner，NewCameraScanner仅支持API21及以上，
-    具体用法参考demo。
 |接口|功能说明|参数及返回值|备注|
 |:---:|:---:|:---:|:---:|
 |**openCamera(Context context)**|开启相机|**context:** 上下文，建议传入ApplicationContext|　　|
