@@ -14,9 +14,9 @@
 * [更新计划](#更新计划)
 * [接口说明](#接口说明)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;[AdjustTextureView](#catadjusttextureview-查看源码)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;[ScannerFrameView](#dogscannerframeview)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;[MaskRelativeLayout](#mousemaskrelativelayout)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;[MaskConstraintLayout](#hamstermaskconstraintlayout)
+&nbsp;&nbsp;&nbsp;&nbsp;[ScannerFrameView](#dogscannerframeview-查看源码)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[MaskRelativeLayout](#mousemaskrelativelayout-查看源码)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[MaskConstraintLayout](#hamstermaskconstraintlayout-查看源码)
 * [版本记录](#版本记录)
 
 ## 功能特色
@@ -70,7 +70,7 @@
 |**setImageFrameMatrix(int frameWidth, int frameHeight, int frameDegree)**|根据图像帧宽高及角度进行显示校正|**frameWidth:** 图像帧的宽<br/>**frameHeight:** 图像帧的高<br/>**frameDegree:** 图像旋转角度|　　|
 |**setImageFrameMatrix()**|根据图像帧宽高及角度进行显示校正|||
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;:dog:&nbsp;&nbsp;**ScannerFrameView**
+#### &nbsp;&nbsp;&nbsp;&nbsp;:dog:&nbsp;&nbsp;**ScannerFrameView** [查看源码](/zbar/src/main/java/com/simonlee/scanner/view/ScannerFrameView.java)
     继承自View，用于绘制扫描框
 |接口|功能说明|参数及返回值|备注|
 |:---:|:---:|:---:|:---:|
@@ -93,13 +93,13 @@
 |**setScanLineColor(int scanLineColor)**|设置扫描线颜色|**scanLineColor:** 十六进制色值|xml中可通过`scanLine_color`属性配置，默认蓝色|
 |**setScanLineCycle(int scanLineCycle)**|设置扫描线移动周期|**scanLineCycle:** 一个周期时长，单位ms|xml中可通过`scan_cycle`属性配置，默认值1500|
     
-#### &nbsp;&nbsp;&nbsp;&nbsp;:mouse:&nbsp;&nbsp;**MaskRelativeLayout**
+#### &nbsp;&nbsp;&nbsp;&nbsp;:mouse:&nbsp;&nbsp;**MaskRelativeLayout** [查看源码](/zbar/src/main/java/com/simonlee/scanner/view/MaskRelativeLayout.java)
     继承自RelativeLayout，用于绘制扫描框外部阴题
 |接口|功能说明|参数及返回值|备注|
 |:---:|:---:|:---:|:---:|
 |**setFrameOutsideColor(int frameOutsideColor)**|设置扫描框外部填充色|**frameOutsideColor:** 十六进制色值|xml中可通过`frame_outsideColor`属性配置|
     
-#### &nbsp;&nbsp;&nbsp;&nbsp;:hamster:&nbsp;&nbsp;**MaskConstraintLayout**
+#### &nbsp;&nbsp;&nbsp;&nbsp;:hamster:&nbsp;&nbsp;**MaskConstraintLayout** [查看源码](/zbar/src/main/java/com/simonlee/scanner/view/MaskConstraintLayout.java)
     继承自ConstraintLayout，用于绘制扫描框外部阴影
 |接口|功能说明|参数及返回值|备注|
 |:---:|:---:|:---:|:---:|
