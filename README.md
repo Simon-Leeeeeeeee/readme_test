@@ -107,11 +107,10 @@
 |**setFrameOutsideColor(int frameOutsideColor)**|设置扫描框外部填充色|**frameOutsideColor:** 十六进制色值|xml中可通过`frame_outsideColor`属性配置|
     
 #### &nbsp;&nbsp;&nbsp;&nbsp;:rabbit:&nbsp;&nbsp;**CameraScanner** [查看源码](/zbar/src/main/java/com/simonlee/scanner/core/CameraScanner.java)
-    camera接口，对外提供camera支持，具体用法参考demo。
-    有两个实体类高兴兴见高兴见高兴见到您
+    欢迎到访
+    很高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见高兴见到您
     祝您，早上好，中午好，下午好，晚安
 
-#### 语法
     camera接口类，对外提供camera支持。
     有两个实体类OldCameraScanner和NewCameraScanner，NewCameraScanner仅支持API21及以上，
     具体用法参考demo。
