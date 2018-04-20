@@ -13,6 +13,7 @@
 * [Gradle依赖](#gradle依赖)
 * [更新计划](#更新计划)
 * [接口说明](#接口说明)
+&nbsp;&nbsp;&nbsp;&nbsp;[AdjustTextureView](#adjusttextureview)
 * [版本记录](#版本记录)
 
 ## 功能特色
