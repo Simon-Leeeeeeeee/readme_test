@@ -74,15 +74,20 @@
 |**setFrameHeightRatio(float frameHeightRatio)**|设置view高占比（相对父容器的高）|**frameHeightRatio:** 高占比|仅高为wrap_content时有效，xml中可通过`frame_heightRatio`属性配置，默认值0|
 |**setFrameWHRatio(float frameWHRatio)**|设置view宽高比|**frameWHRatio:** 宽高比|仅当宽或高为wrap_content且未设置父占比时有效，xml中可通过`frame_whRatio`属性配置，默认值0|
 |**setFrameLineVisible(boolean frameLineVisible)**|设置是否显示边框|**frameLineVisible:** true显示/false隐藏|xml中可通过`frameLine_visible`属性配置|
-|**setFrameLineWidth(int frameLineWidth)**|设置边框宽度|**frameLineWidth:** 边框宽|xml中可通过`frameLine_width`属性配置|
-|**setFrameLineColor(int frameLineColor)**|设置边框颜色|**frameLineColor:** 十六进制色值|xml中可通过`frameLine_color`属性配置|
-|**setFrameCornerVisible(boolean frameCornerVisible)**|设置是否显示边角|**frameCornerVisible:** true显示/false隐藏|xml中可通过`frameCorner_visible`属性配置|
-|**setFrameCornerLength(int frameCornerLength)**|设置边角长度|**frameCornerLength:** 边角长|xml中可通过`frameCorner_length`属性配置|
-|**setframeCornerLengthRatio(float frameCornerLengthRatio)**|设置边角长占比（相对View的宽）|**frameCornerLengthRatio:** 长占比|当未设置边角长度时有效，xml中可通过`frameCorner_lengthRatio`属性配置|
-|**setFrameCornerWidth(int frameCornerWidth)**|设置边角宽度|**frameCornerWidth:** 边角宽|xml中可通过`frameCorner_width`属性配置|
-|**setFrameCornerColor(int frameCornerColor)**|设置边角颜色|**frameCornerColor:** 十六进制色值|xml中可通过`frameCorner_color`属性配置|
-|**setScanLineVisible(boolean scanLineVisible)**|设置是否显示扫描线|**scanLineVisible:** true显示/false隐藏|xml中可通过`scanLine_visible`属性配置|
-|**setScanLineDirection(int scanLineDirection)**|设置扫描线移动方向|**scanLineDirection:** 移动方向|xml中可通过`scanLine_direction`属性配置|
+|**setFrameLineWidth(int frameLineWidth)**|设置边框宽度|**frameLineWidth:** 边框宽|xml中可通过`frameLine_width`属性配置，默认值1dp|
+|**setFrameLineColor(int frameLineColor)**|设置边框颜色|**frameLineColor:** 十六进制色值|xml中可通过`frameLine_color`属性配置，默认白色|
+|**setFrameCornerVisible(boolean frameCornerVisible)**|设置是否显示边角|**frameCornerVisible:** true显示/false隐藏|xml中可通过`frameCorner_visible`属性配置，默认true|
+|**setFrameCornerLength(int frameCornerLength)**|设置边角长度|**frameCornerLength:** 边角长|xml中可通过`frameCorner_length`属性配置，默认值0|
+|**setframeCornerLengthRatio(float frameCornerLengthRatio)**|设置边角长占比（相对View的宽）|**frameCornerLengthRatio:** 长占比|当未设置边角长度时有效，xml中可通过`frameCorner_lengthRatio`属性配置，默认值0.1|
+|**setFrameCornerWidth(int frameCornerWidth)**|设置边角宽度|**frameCornerWidth:** 边角宽|xml中可通过`frameCorner_width`属性配置，默认值3dp|
+|**setFrameCornerColor(int frameCornerColor)**|设置边角颜色|**frameCornerColor:** 十六进制色值|xml中可通过`frameCorner_color`属性配置，默认蓝色|
+|**setScanLineVisible(boolean scanLineVisible)**|设置是否显示扫描线|**scanLineVisible:** true显示/false隐藏|xml中可通过`scanLine_visible`属性配置，默认true|
+|**setScanLineDirection(int scanLineDirection)**|设置扫描线移动方向|**scanLineDirection:** 移动方向|xml中可通过`scanLine_direction`属性配置，默认向下移动|
+|**setScanLineLengthPadding(int scanLineLengthPadding)**|设置扫描线长度Padding|**scanLineLengthPadding:** padding值|xml中可通过`scanLine_lengthPadding`属性配置，默认-1|
+|**setScanLineLengthRatio(float scanLineLengthRatio)**|设置扫描线长占比（相对View的长/宽，由扫描方向决定）|**scanLineLengthRatio:** 长占比|当未设置长度padding时有效，xml中可通过`scanLine_lengthRatio`属性配置，默认值0.98|
+|**setScanLineWidth(int scanLineWidth)**|设置扫描线宽|**scanLineWidth:** 扫描线宽|xml中可通过`scanLine_width`属性配置，默认值2dp|
+|**setScanLineColor(int scanLineColor)**|设置扫描线颜色|**scanLineColor:** 十六进制色值|xml中可通过`scanLine_color`属性配置，默认蓝色|
+|**setScanLineCycle(int scanLineCycle)**|设置扫描线移动周期|**scanLineCycle:** 一个周期时长，单位ms|xml中可通过`scan_cycle`属性配置，默认值1500|
     
 #### &nbsp;&nbsp;&nbsp;&nbsp;:dog:&nbsp;&nbsp;**MaskRelativeLayout**
     继承自RelativeLayout，用于绘制扫描框外部阴影
