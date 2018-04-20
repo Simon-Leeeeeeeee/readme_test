@@ -97,11 +97,13 @@
     继承自RelativeLayout，用于绘制扫描框外部阴题
 |接口|功能说明|参数及返回值|备注|
 |:---:|:---:|:---:|:---:|
-|setFrameOutsideColor(int frameOutsideColor)|设置扫描框外部填充色|frameOutsideColor: 十六进制色值|xml中可通过frame_outsideColor属性配置|
+|**setFrameOutsideColor(int frameOutsideColor)**|设置扫描框外部填充色|**frameOutsideColor:** 十六进制色值|xml中可通过`frame_outsideColor`属性配置|
     
 #### &nbsp;&nbsp;&nbsp;&nbsp;:hamster:&nbsp;&nbsp;**MaskConstraintLayout**
     继承自ConstraintLayout，用于绘制扫描框外部阴影
-
+|接口|功能说明|参数及返回值|备注|
+|:---:|:---:|:---:|:---:|
+|**setFrameOutsideColor(int frameOutsideColor)**|设置扫描框外部填充色|**frameOutsideColor:** 十六进制色值|xml中可通过`frame_outsideColor`属性配置|
 
     未完待续，近日完善。。
 
