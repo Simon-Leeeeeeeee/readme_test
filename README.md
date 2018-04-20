@@ -1,6 +1,6 @@
 # :star2:&nbsp;CodeScanner
 
-一个Android平台上用来解析条码及二维码的框架。目前采用zbar解析图像数据，兼容` API14 `及以w上版本。
+一个Android平台上用来解析条码及二维码的框架。目前采用zbar解析图像数据，兼容` API14 `及以q上版本。
 
 |**Author**|**Simon Lee**|
 |---|---|
