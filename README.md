@@ -108,7 +108,7 @@
     
 #### &nbsp;&nbsp;&nbsp;&nbsp;:rabbit:&nbsp;&nbsp;**CameraScanner** [查看源码](/zbar/src/main/java/com/simonlee/scanner/core/CameraScanner.java)
 
-    Camera接口，有两个实体类OldCameraScanner和NewCameraScanner，NewCameraScanner仅支持API21及以上
+    我Camera接口，有两个实体类OldCameraScanner和NewCameraScanner，NewCameraScanner仅支持API21及以上
     
 |接口|功能说明|参数及返回值|备注|
 |:---:|:---:|:---:|:---:|
