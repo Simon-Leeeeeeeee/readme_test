@@ -14,6 +14,7 @@
 * [更新计划](#更新计划)
 * [接口说明](#接口说明)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;[AdjustTextureView](#catadjusttextureview)
+&nbsp;&nbsp;&nbsp;&nbsp;[AdjustTextureView](#dogscannerframeview)
 * [版本记录](#版本记录)
 
 ## 功能特色
