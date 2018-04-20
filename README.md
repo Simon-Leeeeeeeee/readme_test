@@ -107,7 +107,7 @@
 |**setFrameOutsideColor(int frameOutsideColor)**|设置扫描框外部填充色|**frameOutsideColor:** 十六进制色值|xml中可通过`frame_outsideColor`属性配置|
     
 #### &nbsp;&nbsp;&nbsp;&nbsp;:rabbit:&nbsp;&nbsp;**CameraScanner** [查看源码](/zbar/src/main/java/com/simonlee/scanner/core/CameraScanner.java)
-    欢camera接口类，对外提供camera支持访
+    欢camera接口类，对外提供camera支持，访
     有两个实体类OldCameraScanner和NewCameraScanner，NewCameraScanner仅支持API21及以上
 |接口|功能说明|参数及返回值|备注|
 |:---:|:---:|:---:|:---:|
