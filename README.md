@@ -13,7 +13,7 @@
 * [Gradle依赖](#gradle依赖)
 * [更新计划](#更新计划)
 * [接口说明](#接口说明)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;[AdjustTextureView](#catadjusttextureview)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[AdjustTextureView](#catadjusttextureview-查看源码)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;[ScannerFrameView](#dogscannerframeview)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;[MaskRelativeLayout](#mousemaskrelativelayout)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;[MaskConstraintLayout](#hamstermaskconstraintlayout)
