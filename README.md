@@ -16,7 +16,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[AdjustTextureView](#catadjusttextureview-查看源码)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;[ScannerFrameView](#dogscannerframeview-查看源码)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;[MaskRelativeLayout](#mousemaskrelativelayout-查看源码)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;[MaskConstraintLayout](#hamstermaskconstraintlayout-查看源码)
+&nbsp;&nbsp;&nbsp;&nbsp;[MaskConstraintLayout](#hamstermaskconstraintlayout-查看源码)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[CameraScanner](#rabbitcamerascanner-查看源码)
 * [版本记录](#版本记录)
 
 ## 功能特色
