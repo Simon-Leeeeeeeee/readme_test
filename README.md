@@ -70,11 +70,11 @@
     继承自View，用于绘制扫描框
 |接口|功能说明|参数及返回值|备注|
 |:---:|:---:|:---:|:---:|
-|**setFrameWidthRatio(float frameWidthRatio)**|设置view宽占比（相对父容器的宽）|**frameWidthRatio:** 宽占比|仅宽为**wrap_content**时有效，xml中可通过**frame_widthRatio**属性配置|
-|**setFrameHeightRatio(float frameHeightRatio)**|设置view高占比（相对父容器的高）|**frameHeightRatio:** 高占比|仅高为**wrap_content**时有效，xml中可通过**frame_heightRatio**属性配置|
-|**setFrameWHRatio(float frameWHRatio)**|设置view宽高比|**frameWHRatio:** 宽高比|仅当宽或高为**wrap_content**且未设置父占比时有效，xml中可通过**frame_whRatio**属性配置|
-|**setFrameLineVisible(boolean frameLineVisible)**|设置是否显示边框|**frameLineVisible:** true显示/false隐藏|xml中可通过**frameLine_visible**属性配置|
-|**setFrameLineWidth(int frameLineWidth)**|设置边框宽度|**frameLineWidth:** 边框宽|xml中可通过**frameLine_width**属性配置|
+|**setFrameWidthRatio(float frameWidthRatio)**|设置view宽占比（相对父容器的宽）|**frameWidthRatio:** 宽占比|仅宽为**wrap_content**时有效，xml中可通过`frame_widthRatio`属性配置|
+|**setFrameHeightRatio(float frameHeightRatio)**|设置view高占比（相对父容器的高）|**frameHeightRatio:** 高占比|仅高为**wrap_content**时有效，xml中可通过`frame_heightRatio`属性配置|
+|**setFrameWHRatio(float frameWHRatio)**|设置view宽高比|**frameWHRatio:** 宽高比|仅当宽或高为**wrap_content**且未设置父占比时有效，xml中可通过`frame_whRatio`属性配置|
+|**setFrameLineVisible(boolean frameLineVisible)**|设置是否显示边框|**frameLineVisible:** true显示/false隐藏|xml中可通过`frameLine_visible`属性配置|
+|**setFrameLineWidth(int frameLineWidth)**|设置边框宽度|**frameLineWidth:** 边框宽|xml中可通过`frameLine_width`属性配置|
 |**setFrameLineColor(int frameLineColor)**|设置边框颜色|**frameLineColor:** 十六进制色值|xml中可通过`frameLine_color`属性配置|
 
     未完待续，近日完善。。
