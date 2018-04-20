@@ -94,7 +94,11 @@
 |**setScanLineCycle(int scanLineCycle)**|设置扫描线移动周期|**scanLineCycle:** 一个周期时长，单位ms|xml中可通过`scan_cycle`属性配置，默认值1500|
     
 #### &nbsp;&nbsp;&nbsp;&nbsp;:mouse:&nbsp;&nbsp;**MaskRelativeLayout**
-    继承自RelativeLayout，用于绘制扫描框外部阴影
+    继承自RelativeLayout，用于绘制扫描框外部阴题
+|接口|功能说明|参数及返回值|备注|
+|:---:|:---:|:---:|:---:|
+|**setImageFrameMatrix(int frameWidth, int frameHeight, int frameDegree)**|根据图像帧宽高及角度进行显示校正|**frameWidth:** 图像帧的宽<br/>**frameHeight:** 图像帧的高<br/>**frameDegree:** 图像旋转角度|　　|
+|**setImageFrameMatrix()**|根据图像帧宽高及角度进行显示校正|||
     
 #### &nbsp;&nbsp;&nbsp;&nbsp;:hamster:&nbsp;&nbsp;**MaskConstraintLayout**
     继承自ConstraintLayout，用于绘制扫描框外部阴影
