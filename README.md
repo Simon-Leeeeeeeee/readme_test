@@ -76,14 +76,15 @@
 |**setFrameLineVisible(boolean frameLineVisible)**|设置是否显示边框|**frameLineVisible:** true显示/false隐藏|xml中可通过`frameLine_visible`属性配置|
 |**setFrameLineWidth(int frameLineWidth)**|设置边框宽度|**frameLineWidth:** 边框宽|xml中可通过`frameLine_width`属性配置|
 |**setFrameLineColor(int frameLineColor)**|设置边框颜色|**frameLineColor:** 十六进制色值|xml中可通过`frameLine_color`属性配置|
-
-    未完待续，近日完善。。
+|**setFrameCornerVisible(boolean frameCornerVisible)**|设置是否显示边角|**frameCornerVisible:** true显示/false隐藏|xml中可通过`frameCorner_visible`属性配置|
+|**setFrameCornerLength(int frameCornerLength)**|设置边角长度|**frameCornerLength:** 边角长度|xml中可通过`frameCorner_length`属性配置|
+|**setframeCornerLengthRatio(float frameCornerLengthRatio)**|设置边角长占比（相对View的宽）|**frameCornerLengthRatio:** 长占比|当未设置边角长度时有效，xml中可通过`frameCorner_lengthRatio`属性配置|
     
 #### &nbsp;&nbsp;&nbsp;&nbsp;:dog:&nbsp;&nbsp;**MaskRelativeLayout**
     继承自RelativeLayout，用于绘制扫描框外部阴影
 |接口|功能说明|参数及返回值|备注|
 |:---:|:---:|:---:|:---:|
-|**setFrameOutsideColor(int frameOutsideColor)**|设置扫描框外部填充色|**frameOutsideColor:** 十六进制色值|xml中可通过**frame_outsideColor**属性配置|
+|**setFrameOutsideColor(int frameOutsideColor)**|设置扫描框外部填充色|**frameOutsideColor:** 十六进制色值|xml中可通过`frame_outsideColor`属性配置|
 
     未完待续，近日完善。。
 
