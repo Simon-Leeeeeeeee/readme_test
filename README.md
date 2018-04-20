@@ -12,8 +12,10 @@
 * [示例程序](#示例程序)
 * [Gradle依赖](#gradle依赖)
 * [更新计划](#更新计划)
-* [接口说明](#接口说明)
+* [接口说明](#接口说明)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;[AdjustTextureView](#adjusttextureview)
+* [GradleS依赖](#gradleS依赖)
+* [Gradles依赖](#gradles依赖)
 * [版本记录](#版本记录)
 
 ## 功能特色
@@ -60,6 +62,8 @@
 -  增加二维码生成功能。
 
 ## 接口说明
+#### &nbsp;&nbsp;&nbsp;&nbsp;:cat:&nbsp;&nbsp;**gradleS依赖**
+#### &nbsp;&nbsp;&nbsp;&nbsp;:cat:&nbsp;&nbsp;**gradles依赖**
 #### &nbsp;&nbsp;&nbsp;&nbsp;:cat:&nbsp;&nbsp;**AdjustTextureView**
     继承自TextureView，用于渲染camera预览图像，可根据图像参数进行适配以解决形变问题
 |接口|功能说明|参数及返回值|备注|
