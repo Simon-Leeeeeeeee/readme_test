@@ -13,7 +13,7 @@
 * [Gradle依赖](#gradle依赖)
 * [更新计划](#更新计划)
 * [接口说明](#接口说明)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;[AdjustTextureView](#catadjusttextureview) [查看源码](/download.png)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[AdjustTextureView](#catadjusttextureview)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;[ScannerFrameView](#dogscannerframeview)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;[MaskRelativeLayout](#mousemaskrelativelayout)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;[MaskConstraintLayout](#hamstermaskconstraintlayout)
@@ -63,8 +63,8 @@
 -  增加二维码生成功能。
 
 ## 接口说明
-#### &nbsp;&nbsp;&nbsp;&nbsp;:cat:&nbsp;&nbsp;**AdjustTextureView**
-    继承自TextureView，用于渲染camera预览图像，可根据图像参数进行适配以解决形变问题
+#### &nbsp;&nbsp;&nbsp;&nbsp;:cat:&nbsp;&nbsp;**AdjustTextureView** [查看源码](/download.png)
+    继承自TextureView，用于渲染camera预览图像，可根据图像参数进行适配以解决形变问题  [查看源码](/download.png)
 |接口|功能说明|参数及返回值|备注|
 |:---:|:---:|:---:|:---:|
 |**setImageFrameMatrix(int frameWidth, int frameHeight, int frameDegree)**|根据图像帧宽高及角度进行显示校正|**frameWidth:** 图像帧的宽<br/>**frameHeight:** 图像帧的高<br/>**frameDegree:** 图像旋转角度|　　|
