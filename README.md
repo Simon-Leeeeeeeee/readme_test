@@ -63,7 +63,7 @@
 -  增加二维码生成功能。
 
 ## 接口说明
-#### &nbsp;&nbsp;&nbsp;&nbsp;:cat:&nbsp;&nbsp;**AdjustTextureView** [查看源码](/download.png)
+#### &nbsp;&nbsp;&nbsp;&nbsp;:cat:&nbsp;&nbsp;**AdjustTextureView** [查看源码](/zbar/src/main/java/com/simonlee/scanner/view/AdjustTextureView.java)
     继承自TextureView，用于渲染camera预览图像，可根据图像参数进行适配以解决形变问题  [查看源码](/download.png)
 |接口|功能说明|参数及返回值|备注|
 |:---:|:---:|:---:|:---:|
