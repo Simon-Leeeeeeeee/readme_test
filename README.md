@@ -27,10 +27,10 @@
 ## 功能介绍
 本项目基于ZBar进行开发，分别对预览、相机、解码三个方面进行了高度封装，同时降低三者之间的耦合，增加可灵活配置性。
 
-* 预览<br/>
-    * 自定义`AdjustTextureView`，继承自`TextureView`，开放`setImageFrameMatrix`接口，可根据自身尺寸、图像帧宽高及旋转角度对图像进行校正，解决预览画面变形等异常问题。<br/>
-    * 自定义`ScannerFrameView`，继承自`View`，可通过xml属性或接口自定义扫描框、四个角及扫描线的尺寸、颜色、动画等。<br/>
-    * 自定义`MaskRelativeLayout`&`MaskConstraintLayout`，分别继承自`RelativeLayout`&`ConstraintLayout`，做为`ScannerFrameView`的父容器，用于绘制扫描框外部阴影。<br/>
+* 预览
+    * 自定义`AdjustTextureView`，继承自`TextureView`，开放`setImageFrameMatrix`接口，可根据自身尺寸、图像帧宽高及旋转角度对图像进行校正，解决预览画面变形等异常问题。
+    * 自定义`ScannerFrameView`，继承自`View`，可通过xml属性或接口自定义扫描框、四个角及扫描线的尺寸、颜色、动画等。
+    * 自定义`MaskRelativeLayout`&`MaskConstraintLayout`，分别继承自`RelativeLayout`&`ConstraintLayout`，做为`ScannerFrameView`的父容器，用于绘制扫描框外部阴影。
 
 * 相机
     * 兼容`android.hardware.camera2`及`android.hardware.Camera`两版API。
@@ -67,7 +67,7 @@
    mCameraScanner.setCameraListener(this);
    mTextureView.setSurfaceTextureListener(this);
 ```
-* **STEP.2**
+* STEP.2<br/>
 在Activity的onCreate方法中获取CameraScanner实例，并对CameraScanner和AdjustTextureView设置监听
 ```java
    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
