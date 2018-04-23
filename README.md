@@ -60,13 +60,16 @@
 在Activity的onCreate方法中获取CameraScanner实例，并对CameraScanner和TextureView设置监听
 ```java
 public void onCreate(Bundle savedInstanceState) {
+   super.onCreate(savedInstanceState);
+   setContentView(R.layout.activity_scan_constraint);
+   mTextureView = findViewById(R.id.textureview);
+   mTextureView.setSurfaceTextureListener(this);
    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
       mCameraScanner = OldCameraScanner.getInstance();
    } else {
       mCameraScanner = NewCameraScanner.getInstance();
    }
    mCameraScanner.setCameraListener(this);
-   mTextureView.setSurfaceTextureListener(this);
 }
 ```
 * **STEP.2**<br/>
