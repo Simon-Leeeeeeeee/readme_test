@@ -26,21 +26,21 @@
 本项目基于ZBar进行开发，分别对预览、相机、解码三个方面进行了高度封装，同时降低三者之间的耦合，增加可灵活配置性。
 
 * 预览<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; 自定义`AdjustTextureView`，继承自`TextureView`，开放`setImageFrameMatrix`接口，可根据自身尺寸、图像帧宽高及旋转角度对图像进行校正，解决预览画面变形等异常问题。<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; 自定义`ScannerFrameView`，继承自`View`，可通过xml属性或接口自定义扫描框、四个角及扫描线的尺寸、颜色、动画等。<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; 自定义`MaskRelativeLayout`&`MaskConstraintLayout`，分别继承自`RelativeLayout`&`ConstraintLayout`，做为`ScannerFrameView`的父容器，用于绘制扫描框外部阴影。<br/>
+自定义`AdjustTextureView`，继承自`TextureView`，开放`setImageFrameMatrix`接口，可根据自身尺寸、图像帧宽高及旋转角度对图像进行校正，解决预览画面变形等异常问题。<br/>
+自定义`ScannerFrameView`，继承自`View`，可通过xml属性或接口自定义扫描框、四个角及扫描线的尺寸、颜色、动画等。<br/>
+自定义`MaskRelativeLayout`&`MaskConstraintLayout`，分别继承自`RelativeLayout`&`ConstraintLayout`，做为`ScannerFrameView`的父容器，用于绘制扫描框外部阴影。<br/>
 
 * 相机<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; 兼容`android.hardware.camera2`及`android.hardware.Camera`两版API。<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; 子线程开启camera，防止阻塞主线程造成界面跳转卡顿。<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; 采用单例模式，防止出现多个实例同时操作相机设备引发异常。<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; 开放扫码框Rect设置接口，可根据预览尺寸、图像帧尺寸、预览方向，计算出扫码框在图像帧上的实际位置，以指定图像识别区域。<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; 用`TextureReader`代替`ImageReader`，采用openGl绘制图像纹理，主要解决预览掉帧严重的问题，最终输出实时YUV格式图像。<br/>
+兼容`android.hardware.camera2`及`android.hardware.Camera`两版API。<br/>
+子线程开启camera，防止阻塞主线程造成界面跳转卡顿。<br/>
+采用单例模式，防止出现多个实例同时操作相机设备引发异常。<br/>
+开放扫码框Rect设置接口，可根据预览尺寸、图像帧尺寸、预览方向，计算出扫码框在图像帧上的实际位置，以指定图像识别区域。<br/>
+用`TextureReader`代替`ImageReader`，采用openGl绘制图像纹理，主要解决预览掉帧严重的问题，最终输出实时YUV格式图像。<br/>
 
 * 解码<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; 支持指定图像区域识别。<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; 开放条码类型配置接口，可任意指定需要识别的条码类型。<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; 解码回调结果包含条码类型、条码精度，可配置脏数据过滤规则。<br/>
+支持指定图像区域识别。<br/>
+开放条码类型配置接口，可任意指定需要识别的条码类型。<br/>
+解码回调结果包含条码类型、条码精度，可配置脏数据过滤规则。<br/>
 
 ## 集成方式
 
