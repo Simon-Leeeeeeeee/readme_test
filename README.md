@@ -43,7 +43,7 @@
 
 ## 集成方式
 
-[ ![Download](https://api.bintray.com/packages/simon-lee/Maven/CodeScanner/images/download.svg) ](#)「latestVersion」
+[ ![Download](https://api.bintray.com/packages/simon-lee/Maven/CodeScanner/images/download.svg) ]()
 
 在module的`build.gradle`中添加如下代码
 
