@@ -59,6 +59,7 @@
 * **STEP.1**<br/>
 在Activity的onCreate方法中获取CameraScanner实例，并对CameraScanner和TextureView设置监听
 ```java
+public void onCreate(Bundle savedInstanceState) {
    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
       mCameraScanner = OldCameraScanner.getInstance();
    } else {
@@ -66,40 +67,70 @@
    }
    mCameraScanner.setCameraListener(this);
    mTextureView.setSurfaceTextureListener(this);
+}
 ```
 * **STEP.2**<br/>
 在onSurfaceTextureAvailable回调中设置SurfaceTexture及TextureView的宽高，然后开启相机
 ```java
+public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
    mCameraScanner.setSurfaceTexture(surface);
    mCameraScanner.setPreviewSize(width, height);
    mCameraScanner.openCamera(this.getApplicationContext());
+}
 ```
 * **STEP.3**<br/>
 在openCameraSuccess回调中设置图像帧的宽高及旋转角度，获取ZBarDecoder实例设置给CameraScanner
 ```java
+public void openCameraSuccess(int frameWidth, int frameHeight, int frameDegree) {
    mTextureView.setImageFrameMatrix(frameWidth, frameHeight, frameDegree);
    if (mZBarDecoder == null) {
       mZBarDecoder = new ZBarDecoder(this);
-      //mZBarDecoder = new ZBarDecoder(this, symbolTypeArray)//此构造方法可指定条码识别的格式
+      //mZBarDecoder = new ZBarDecoder(this, symbolTypeArray);//此构造方法可指定条码识别的格式
    }
    //调用setFrameRect方法会对识别区域进行限制，注意getLeft等获取的是相对于父容器左上角的坐标，实际应传入相对于TextureView左上角的坐标。
    mCameraScanner.setFrameRect(mScannerFrameView.getLeft(), mScannerFrameView.getTop(), mScannerFrameView.getRight(), mScannerFrameView.getBottom());
    mCameraScanner.setGraphicDecoder(mZBarDecoder);
+}
 ```
 * **STEP.4**<br/>
 在ZBarDecoder的decodeSuccess回调中获取解析结果，开发者可根据回传的条码类型及精度自定义脏数据过滤规则
 ```java
-   public void decodeSuccess(int type, int quality, String result) {
-      ToastHelper.showToast("[类型" + type + "/精度" + quality + "]" + result, ToastHelper.LENGTH_SHORT);
-   }
+public void decodeSuccess(int type, int quality, String result) {
+   ToastHelper.showToast("[类型" + type + "/精度" + quality + "]" + result, ToastHelper.LENGTH_SHORT);
+}
 ```
-* **其他.1**<br/>
+* **STEP.5**<br/>
+在Activity的onDestroy方法中关闭相机和解码
+```java
+public void onDestroy() {
+   mCameraScanner.setGraphicDecoder(null);
+   mCameraScanner.detach();
+   if (mZBarDecoder != null) {
+      mZBarDecoder.detach();
+   }
+   super.onDestroy();
+}
+```
+* **注意.1**<br/>
 在Activity的onPause方法中关闭相机
 ```java
-   protected void onPause() {
-      mCameraScanner.closeCamera();
-      super.onPause();
+public void onPause() {
+   mCameraScanner.closeCamera();
+   super.onPause();
+}
+```
+* **注意.2**<br/>
+在Activity的onRestart方法中开启相机
+```java
+public void onRestart() {
+   //部分机型在后台转前台时会回调onSurfaceTextureAvailable开启相机，因此要做判断防止重复开启
+   if (mTextureView.isAvailable()) {
+      mCameraScanner.setSurfaceTexture(mTextureView.getSurfaceTexture());
+      mCameraScanner.setPreviewSize(mTextureView.getWidth(), mTextureView.getHeight());
+      mCameraScanner.openCamera(this.getApplicationContext());
    }
+   super.onRestart();
+}
 ```
 
 ## 更新计划
