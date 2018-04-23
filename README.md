@@ -2,8 +2,8 @@
 
 一个Android平台上用来解析条形码及二维码的框架。采用zbar解析图像数据，兼容` Android4.0 (API14) `及以上版本。
 
-****
 ## 目录
+
 * [示例demo](#示例demo)
 * [功能介绍](#功能介绍)
 * [基本结构](#基本结构)
@@ -20,6 +20,7 @@
 |[点此下载](http://fir.im/CodeScanner) 或扫描下面二维码<br/>[![demo](/download.png)](http://fir.im/CodeScanner  "扫码下载示例程序")|[![gif](/demo.gif)](http://fir.im/CodeScanner  "示例效果")|
 
 ## 功能介绍
+
 本项目基于ZBar进行开发，分别对预览、相机、解码三个方面进行了高度封装，同时降低三者之间的耦合，增加可灵活配置性。
 
 * 预览
@@ -43,13 +44,12 @@
 
 ## 集成方式
 
-[ ![Version](https://api.bintray.com/packages/simon-lee/Maven/CodeScanner/images/download.svg) ](#集成方式)
-
 在module的`build.gradle`中添加如下代码
-
+```
     dependencies {
         implementation 'cn.simonlee.codescanner:zbar:1.1.1'
     }
+```
 
 ## 使用方式
 
@@ -136,6 +136,7 @@ public void onRestart() {
 ```
 
 ## 更新计划
+
 *  解决TextureView尺寸变化及padding&margin带来的一些问题。
 *  增加环境亮度监测，提示闪光灯开启。
 *  增加本地图片识别功能。
