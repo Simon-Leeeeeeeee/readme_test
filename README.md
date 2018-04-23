@@ -1,16 +1,12 @@
 # :star2:&nbsp;CodeScanner
 
-一个Android平台上用来解析条码及二维码的框架。目前采用zbar解析图像数据，兼容` API14 `及以上版本。
-
-|**Author**|**Simon Lee**|
-|---|---|
-|**E-mail**|**jmlixiaomeng@163.com**|
+一个Android平台上用来解析条形码及二维码的框架。采用zbar解析图像数据，兼容` Android4.0 (API14) `及以上版本。
 
 ****
 ## 目录
-* [功能特色](#功能特色)
-* [示例程序](#示例程序)
-* [Gradle依赖](#gradle依赖)
+* [示例demo](#示例demo)
+* [功能介绍](#功能介绍)
+* [集成方式](#集成方式)
 * [更新计划](#更新计划)
 * [接口说明](#接口说明)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;[AdjustTextureView](#catadjusttextureview-查看源码)<br/>
@@ -20,35 +16,33 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[CameraScanner](#rabbitcamerascanner-查看源码)
 * [版本记录](#版本记录)
 
-## 功能特色
-
-1. 支持新旧两版CameraAPI
-
-2. zbar解码，更快更精准
-
-3. 扫码框随心定制，动画不卡顿
-
-4. layout任意尺寸，预览不变形
-
-5. camera异步开启，不占主线程
-
-6. 可配置扫码框内识别，精准无误差
-
-7. 前后台、横竖屏任意切，绝对不闪退
-
-8. TextureReader取代ImageReader，预览不丢帧
-
-9. ZBarDecoder支持图像格式及精度控制，过滤脏数据
-
-10. 自动对焦很简单，指哪扫哪
-
-## 示例程序
+## 示例demo
 
 |Demo下载|示例效果|
 |:---:|:---:|
 |[点此下载](http://fir.im/CodeScanner) 或扫描下面二维码<br/>[![demo](/download.png)](http://fir.im/CodeScanner  "扫码下载示例程序")|[![gif](/demo.gif)](http://fir.im/CodeScanner  "示例效果")|
 
-## Gradle依赖
+## 功能介绍
+本项目基于ZBar进行开发，分别对预览、相机、解码三个方面进行了高度封装，同时降低三者之间的耦合，增加可灵活配置性。
+
+* 预览<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; 自定义`AdjustTextureView`，继承自`TextureView`，开放`setImageFrameMatrix`接口，可根据自身尺寸、图像帧宽高及旋转角度对图像进行校正，解决预览画面变形等异常问题。<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; 自定义`ScannerFrameView`，继承自`View`，可通过xml属性或接口自定义扫描框、四个角及扫描线的尺寸、颜色、动画等。<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; 自定义`MaskRelativeLayout`&`MaskConstraintLayout`，分别继承自`RelativeLayout`&`ConstraintLayout`，做为`ScannerFrameView`的父容器，用于绘制扫描框外部阴影。<br/>
+
+* 相机<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; 兼容`android.hardware.camera2`及`android.hardware.Camera`两版API。<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; 子线程开启camera，防止阻塞主线程造成界面跳转卡顿。<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; 采用单例模式，防止出现多个实例同时操作相机设备引发异常。<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; 开放扫码框Rect设置接口，可根据预览尺寸、图像帧尺寸、预览方向，计算出扫码框在图像帧上的实际位置，以指定图像识别区域。<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; 用`TextureReader`代替`ImageReader`，采用openGl绘制图像纹理，主要解决预览掉帧严重的问题，最终输出实时YUV格式图像。<br/>
+
+* 解码<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; 支持指定图像区域识别。<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; 开放条码类型配置接口，可任意指定需要识别的条码类型。<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; 解码回调结果包含条码类型、条码精度，可配置脏数据过滤规则。<br/>
+
+## 集成方式
 
 在module的`build.gradle`中添加如下代码
 
