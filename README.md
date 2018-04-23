@@ -215,7 +215,7 @@ public void onRestart() {
 
 |Author|E-mail|WeChat|
 |---|---|---|
-|Simon Lee|jmlixiaomeng@163.com|[![demo](/download.png)](http://fir.im/CodeScanner  "私人微信哦~")|
+|Simon Lee|jmlixiaomeng@163.com|[![wechat](/download.png)](#基本结构  "私人微信哦~")|
 
 
-[ ![Download](https://api.bintray.com/packages/simon-lee/Maven/CodeScanner/images/download.svg) ](https://bintray.com/simon-lee/Maven/CodeScanner/_latestVersion)「latestVersion」
+[ ![Download](https://api.bintray.com/packages/simon-lee/Maven/CodeScanner/images/download.svg) ](#关于作者)「latestVersion」
