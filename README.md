@@ -43,7 +43,7 @@
 
 ## 集成方式
 
-[ ![Download](https://api.bintray.com/packages/simon-lee/Maven/CodeScanner/images/download.svg) ]()
+[ ![Download](https://api.bintray.com/packages/simon-lee/Maven/CodeScanner/images/download.svg) ](#集成方式)
 
 在module的`build.gradle`中添加如下代码
 
@@ -217,4 +217,4 @@ public void onRestart() {
 
 |Author|E-mail|WeChat|
 |---|---|---|
-|Simon Lee|jmlixiaomeng@163.com|[![wechat](/download.png)](# "私人微信哦~")|
+|Simon Lee|jmlixiaomeng@163.com|[![wechat](/download.png)](#关于作者 "私人微信哦~")|
