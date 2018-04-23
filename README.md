@@ -145,12 +145,12 @@ public void onRestart() {
 ## 版本记录
 
 -  V1.1.1   `2018/04/16`
-1. `ScannerFrameView`增加高占比属性，可设置相对父容器高的占比。
-2. 修改包名为`com.simonlee.demo.camerascanner`。
+　　1. `ScannerFrameView`增加高占比属性，可设置相对父容器高的占比。
+　　2. 修改包名为`com.simonlee.demo.camerascanner`。
 
 *  V1.1.0   `2018/04/16`
-   * 重写`ZBarDecoder`，解决单线程池可能引起的条码解析延迟问题。
-   * 解决`OldCameraScanner`扫描框区域识别异常的问题。
+　　1. 重写`ZBarDecoder`，解决单线程池可能引起的条码解析延迟问题。
+　　2. 解决`OldCameraScanner`扫描框区域识别异常的问题。
 
 -  V1.0.9   `2018/04/14`
    1. 解决`NewCameraScanner`扫描框区域识别异常的问题。
