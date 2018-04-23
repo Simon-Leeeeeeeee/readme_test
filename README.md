@@ -21,9 +21,9 @@
 
 ## 功能介绍
 
-本项目基于ZBar进行开发，分别对预览、相机、解码三个方面进行了高度封装，同时降低三者之间的耦合，增加可灵活配置性。
+本项目基于ZBar进行开发，分别对视图、相机、解码三个方面进行了高度封装，同时降低三者之间的耦合，增加可灵活配置性。
 
-* 预览
+* 视图
     * 自定义`AdjustTextureView`，继承自`TextureView`，开放`setImageFrameMatrix`接口，可根据自身尺寸、图像帧宽高及旋转角度对图像进行校正，解决预览画面变形等异常问题。
     * 自定义`ScannerFrameView`，继承自`View`，可通过xml属性或接口自定义扫描框、四个角及扫描线的尺寸、颜色、动画等。
     * 自定义`MaskRelativeLayout`&`MaskConstraintLayout`，分别继承自`RelativeLayout`&`ConstraintLayout`，做为`ScannerFrameView`的父容器，用于绘制扫描框外部阴影。
