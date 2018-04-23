@@ -6,8 +6,9 @@
 ## 目录
 * [示例demo](#示例demo)
 * [功能介绍](#功能介绍)
-* [集成方式](#集成方式)
 * [基本结构](#基本结构)
+* [集成方式](#集成方式)
+* [使用方式](#使用方式)
 * [更新计划](#更新计划)
 * [接口说明](#接口说明)
     * [AdjustTextureView](#catadjusttextureview-查看源码)
@@ -43,6 +44,8 @@
     * 开放条码类型配置接口，可任意指定需要识别的条码类型。<br/>
     * 解码回调结果包含条码类型、条码精度，可配置脏数据过滤规则。<br/>
 
+## 基本结构
+
 ## 集成方式
 
 在module的`build.gradle`中添加如下代码
@@ -51,7 +54,18 @@
         implementation 'cn.simonlee.codescanner:zbar:1.1.1'
     }
 
-## 基本结构
+## 使用方式
+```java
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            mCameraScanner = OldCameraScanner.getInstance();
+        } else {
+            mCameraScanner = NewCameraScanner.getInstance();
+        }
+
+        mCameraScanner.setCameraListener(this);
+        mTextureView.setSurfaceTextureListener(this);
+```
+
 
 ## 更新计划
 -  解决TextureView尺寸变化及padding&margin带来的一些问题。
