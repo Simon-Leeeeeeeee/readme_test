@@ -217,4 +217,5 @@ public void onRestart() {
 |---|---|---|
 |Simon Lee|jmlixiaomeng@163.com|[![demo](/download.png)](http://fir.im/CodeScanner  "私人微信哦~")|
 
-[ ![Download](https://api.bintray.com/packages/simon-lee/Maven/CodeScanner/1.1.1/images/download.svg) ](https://bintray.com/simon-lee/Maven/CodeScanner/_latestVersion)「latestVersion」
+
+[ ![Download](https://api.bintray.com/packages/simon-lee/Maven/CodeScanner/images/download.svg) ](https://bintray.com/simon-lee/Maven/CodeScanner/_latestVersion)「latestVersion」
