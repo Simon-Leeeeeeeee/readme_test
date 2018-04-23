@@ -32,17 +32,17 @@
     * 自定义`ScannerFrameView`，继承自`View`，可通过xml属性或接口自定义扫描框、四个角及扫描线的尺寸、颜色、动画等。<br/>
     * 自定义`MaskRelativeLayout`&`MaskConstraintLayout`，分别继承自`RelativeLayout`&`ConstraintLayout`，做为`ScannerFrameView`的父容器，用于绘制扫描框外部阴影。<br/>
 
-* 相机<br/>
-    * 兼容`android.hardware.camera2`及`android.hardware.Camera`两版API。<br/>
-    * 子线程开启camera，防止阻塞主线程造成界面跳转卡顿。<br/>
-    * 采用单例模式，防止出现多个实例同时操作相机设备引发异常。<br/>
-    * 开放扫码框Rect设置接口，根据预览尺寸、图像帧尺寸、预览方向计算出扫码框在图像帧上的实际位置，以指定图像识别区域。<br/>
-    * 用`TextureReader`代替`ImageReader`，采用openGl绘制图像纹理，主要解决预览掉帧严重的问题，最终输出实时YUV格式图像。<br/>
+* 相机
+    * 兼容`android.hardware.camera2`及`android.hardware.Camera`两版API。
+    * 子线程开启camera，防止阻塞主线程造成界面跳转卡顿。
+    * 采用单例模式，防止出现多个实例同时操作相机设备引发异常。
+    * 开放扫码框Rect设置接口，根据预览尺寸、图像帧尺寸、预览方向计算出扫码框在图像帧上的实际位置，以指定图像识别区域。
+    * 用`TextureReader`代替`ImageReader`，采用openGl绘制图像纹理，主要解决预览掉帧严重的问题，最终输出实时YUV格式图像。
 
-* 解码<br/>
-    * 支持指定图像区域识别。<br/>
-    * 开放条码类型配置接口，可任意指定需要识别的条码类型。<br/>
-    * 解码回调结果包含条码类型、条码精度，可配置脏数据过滤规则。<br/>
+* 解码
+    * 支持指定图像区域识别。
+    * 开放条码类型配置接口，可任意指定需要识别的条码类型。
+    * 解码回调结果包含条码类型、条码精度，可配置脏数据过滤规则。
 
 ## 基本结构
 
@@ -56,7 +56,7 @@
 
 ## 使用方式
 
-* **STEP.1** 
+* **STEP.1**<br/>
 在Activity的onCreate方法中获取CameraScanner实例，并对CameraScanner和AdjustTextureView设置监听
 ```java
    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
@@ -67,7 +67,8 @@
    mCameraScanner.setCameraListener(this);
    mTextureView.setSurfaceTextureListener(this);
 ```
-   **STEP.2** 在Activity的onCreate方法中获取CameraScanner实例，并对CameraScanner和AdjustTextureView设置监听
+* **STEP.2**
+在Activity的onCreate方法中获取CameraScanner实例，并对CameraScanner和AdjustTextureView设置监听
 ```java
    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
       mCameraScanner = OldCameraScanner.getInstance();
