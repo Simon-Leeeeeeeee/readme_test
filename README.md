@@ -55,7 +55,9 @@
     }
 
 ## 使用方式
-   **STEP.1** 在Activity的onCreate方法中获取CameraScanner实例，并对CameraScanner和AdjustTextureView设置监听
+
+* **STEP.1** 
+在Activity的onCreate方法中获取CameraScanner实例，并对CameraScanner和AdjustTextureView设置监听
 ```java
    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
       mCameraScanner = OldCameraScanner.getInstance();
