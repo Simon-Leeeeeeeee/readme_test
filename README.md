@@ -7,13 +7,14 @@
 * [示例demo](#示例demo)
 * [功能介绍](#功能介绍)
 * [集成方式](#集成方式)
+* [基本结构](#基本结构)
 * [更新计划](#更新计划)
-* [接口说明](#接口说明)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;[AdjustTextureView](#catadjusttextureview-查看源码)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;[ScannerFrameView](#dogscannerframeview-查看源码)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;[MaskRelativeLayout](#mousemaskrelativelayout-查看源码)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;[MaskConstraintLayout](#hamstermaskconstraintlayout-查看源码)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;[CameraScanner](#rabbitcamerascanner-查看源码)
+* [接口说明](#接口说明)
+    * [AdjustTextureView](#catadjusttextureview-查看源码)
+    * [ScannerFrameView](#dogscannerframeview-查看源码)
+    * [MaskRelativeLayout](#mousemaskrelativelayout-查看源码)
+    * [MaskConstraintLayout](#hamstermaskconstraintlayout-查看源码)
+    * [CameraScanner](#rabbitcamerascanner-查看源码)
 * [版本记录](#版本记录)
 
 ## 示例demo
@@ -49,6 +50,8 @@
     dependencies {
         implementation 'cn.simonlee.codescanner:zbar:1.1.1'
     }
+
+## 基本结构
 
 ## 更新计划
 -  解决TextureView尺寸变化及padding&margin带来的一些问题。
