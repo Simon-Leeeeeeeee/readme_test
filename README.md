@@ -87,9 +87,9 @@ public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int hei
 ```java
 public void openCameraSuccess(int frameWidth, int frameHeight, int frameDegree) {
    mTextureView.setImageFrameMatrix(frameWidth, frameHeight, frameDegree);
-   if (mZBarDecoder == null) {
-      mZBarDecoder = new ZBarDecoder(this);
-      //mZBarDecoder = new ZBarDecoder(this, symbolTypeArray);//此构造方法可指定条码识别的格式
+   if (mGraphicDecoder == null) {
+      mGraphicDecoder = new ZBarDecoder();//使用带参构造方法可指定条码识别的格式
+      mGraphicDecoder.setDecodeListener(this);
    }
    //调用setFrameRect方法会对识别区域进行限制，注意getLeft等获取的是相对于父容器左上角的坐标，实际应传入相对于TextureView左上角的坐标。
    mCameraScanner.setFrameRect(mScannerFrameView.getLeft(), mScannerFrameView.getTop(), mScannerFrameView.getRight(), mScannerFrameView.getBottom());
@@ -109,8 +109,9 @@ public void decodeSuccess(int type, int quality, String result) {
 public void onDestroy() {
    mCameraScanner.setGraphicDecoder(null);
    mCameraScanner.detach();
-   if (mZBarDecoder != null) {
-      mZBarDecoder.detach();
+   if (mGraphicDecoder != null) {
+      mGraphicDecoder.setDecodeListener(null);
+      mGraphicDecoder.detach();
    }
    super.onDestroy();
 }
