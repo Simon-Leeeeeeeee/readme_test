@@ -42,6 +42,8 @@
 
 ## 基本结构
 
+[![demo](http://on-img.com/chart_image/5adee672e4b046910652baa4.png)](#基本结构  "扫码下载示例程序")
+
 ## 集成方式
 
 在module的`build.gradle`中添加如下代码
