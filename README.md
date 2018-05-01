@@ -99,7 +99,7 @@ public void openCameraSuccess(int frameWidth, int frameHeight, int frameDegree) 
 Get the decoded result in decodeSuccess of ZBarDecoder. You can customize the dirty data filter rule according to the returned barcode type and precision.
 ```java
 public void decodeSuccess(int type, int quality, String result) {
-   ToastHelper.showToast("[类型" + type + "/精度" + quality + "]" + result, ToastHelper.LENGTH_SHORT);
+   ToastHelper.showToast("[type" + type + "/quality" + quality + "]" + result, ToastHelper.LENGTH_SHORT);
 }
 ```
 * **STEP.5**<br/>
@@ -148,81 +148,80 @@ public void onRestart() {
 ## Changelog
 
 *  V1.1.5   `2018/05/01`
-   1. 解决申请权限闪退的问题。
-   2. 解决魅族MX5闪退的问题。
-   3. 修改`ZBarDecoder`和`TextureReader`的实现方式，降低CPU占用。
-   4. 新增`DebugZBarDecoder`，继承自`ZBarDecoder`,便于示例程序进行兼容性测试。
-   5. 暂停/延时解码接口从`CameraScanner`迁移到`GraphicDecoder`，`CameraScanner`可能因为异步导致暂停后继续回调`decodeSuccess`接口。
-   6. 发布开源库：`cn.simonlee.xcodescanner:zbar:1.1.5`。
+   1. Solve the problem of application permission crash.
+   2. Solve the problem of running a crash on the Meizu MX5.
+   3. Modify the implementation of `ZBarDecoder` and `TextureReader` to reduce CPU usage.
+   4. Add `AdjustTextureView`, extended from `TextureView`, for ease of compatibility testing.
+   5. The pause/delay decode interface is migrated from `CameraScanner` to `GraphicDecoder`. `CameraScanner` may continue to call back `decodeSuccess` after a pause because of asynchronous.
+   6. Release the open source library: `cn.simonlee.xcodescanner:zbar:1.1.5`.
 
 *  V1.1.4   `2018/04/26`
-   1. 解决Android4.2退出时闪退的问题。
-   2. 解决某些低端机型可能预览严重丢帧的问题。
-   3. 解决`OldCameraScanner`默认没有开启解码的问题。
-   4. 发布开源库：`cn.simonlee.xcodescanner:zbar:1.1.4`。
+   1. Solve the crash problem when running on Android4.2.
+   2. Solve the problem that some low-end devices may preview severe dropped frames.
+   3. Solve the problem that `OldCameraScanner` does not start decoding by default.
+   4. Release the open source library: `cn.simonlee.xcodescanner:zbar:1.1.4`.
 
 *  V1.1.3   `2018/04/25`
-   1. 解决部分x86设备闪退的问题。
-   2. `CameraScanner`新增`stopDecode()`和`startDecode(int delay)`接口，可暂停/延时解码。
-   3. ZBar包名由`com.simonlee.xcodescanner`变更为`com.simonlee.xcodescanner`。
-   4. 发布开源库：`cn.simonlee.xcodescanner:zbar:1.1.3`，`codescanner`变更为`xcodescanner`，由此带来不便的敬请谅解。
-   5. 有开发者反馈部分机型存在闪退、无法解析二维码的问题，将在近期解决。
+   1. Solve the problem of running crashes on some x86 devices.
+   2. Added `stopDecode()` and `startDecode(int delay)` for stop/start decoding.
+   3. Change the ZBar package name to `cn.simonlee.xcodescanner` from `com.simonlee.xcodescanner`.
+   4. Release the open source library: `cn.simonlee.xcodescanner:zbar:1.1.3`.
 
 *  V1.1.2   `2018/04/24`
-   1. 解决`ZBarDecoder`中设置解码格式无效的问题。
+   1. Solve the problem that setting the decoding format in `ZBarDecoder` does not take effect.
 
 *  V1.1.1   `2018/04/16`
-   1. `ScannerFrameView`增加高占比属性，可设置相对父容器高的占比。
-   2. 发布开源库：`cn.simonlee.codescanner:zbar:1.1.1`。
+   1. Add the heightRatio attribute in `ScannerFrameView` to set the proportion of high relative to the parentView.
+   2. Release the open source library: `cn.simonlee.codescanner:zbar:1.1.1`.
 
 *  V1.1.0   `2018/04/16`
-   1. 重写`ZBarDecoder`，解决单线程池可能引起的条码解析延迟问题。
-   2. 解决`OldCameraScanner`扫描框区域识别异常的问题。
+   1. Rewrite `ZBarDecoder` to solve the problem of bar code decodeing delay caused by single thread pool.
+   2. Solve the problem of the `OldCameraScanner` scan box area exception.
 
 *  V1.0.9   `2018/04/14`
-   1. 解决`NewCameraScanner`扫描框区域识别异常的问题。
-   2. 解决连续快速旋转屏幕时`NewCameraScanner`出现异常的问题。
+   1. Solve the problem of the `NewCameraScanner` scan box area exception.
+   2. Solve the problem of abnormality of `NewCameraScanner` when continuously rotating the device quickly.
 
 *  V1.0.8   `2018/04/13`
-    1. `AutoFixTextureView`更名为`AdjustTextureView`，重写图像校正方式。
-    2. `Camera2Scanner`更名为`NewCameraScanner`。
-    3. 新增`OldCameraScanner`实现对`Android5.0`以下的支持。
-    4. 下调minSdkVersion至14。
-    5. 解决前后台切换，横竖屏切换可能产生的异常。
-    6. `NewCameraScanner`中取消`ImageReader`的支持。
+    1. `AutoFixTextureView` renamed `AdjustTextureView`, overrides image correction.
+    2. `Camera2Scanner` renamed `NewCameraScanner`.
+    3. Added `OldCameraScanner` to support below Android 5.0.
+    4. Lower minSdkVersion to 14.
+    5. Solve the problem that may be caused by front-to-back background switching and horizontal and vertical screen switching.
+    6. `NewCameraScanner` cancels `ImageReader` support.
 
 *  V1.0.7   `2018/04/10`
-    1. 调整扫描框宽高计算方式，新增`MaskConstraintLayout`布局。
-    2. 优化`Camera2Scanner`，解决后台切换导致的闪退问题。
+    1. Adjust the method for calculating the width and height of the scan box.
+    2. Added `MaskConstraintLayout` layout.
+    3. Optimize `Camera2Scanner` to solve the crash caused by background switching.
 
 *  V1.0.6   `2018/04/09`
-    1. 调整代码结构，将扫码核心从app移植到zbar中。
+    1. Adjust the code structure.
 
 *  V1.0.5   `2018/03/29`
-    1. 增加帧数据的最大尺寸限制，避免因过高像素导致ZBar解析二维码失败。
-    2. 屏蔽ZBar对DataBar(RSS-14)格式条码的支持，此格式实用性不高，且易产生误判。
+    1. Limit the maximum size of frame data to avoid decoding QR code failure due to high pixels.
+    2. Shielding support for DataBar (RSS-14) format barcodes, this format is not practical and is prone to misjudgment.
 
 *  V1.0.4   `2018/03/27`
-    1. 修改`ZBarDecoder`，修复多线程可能的空指针异常。
-    2. 修改`GraphicDecoder`，EGL14替换EGL10，解决部分机型不兼容的问题；解决多线程可能的空指针异常。
+    1. Modify `ZBarDecoder` to fix possible null pointer exceptions for multiple threads.
+    2. Modify `GraphicDecoder`, replace EGL10 with EGL14, and solve some device incompatibility problems.
 
 *  V1.0.3   `2018/03/23`
-    1. 新增`TextureReader`，通过双缓冲纹理获取帧数据进行回调，代替`ImageReader`的使用。
-    2. 修改`GraphicDecoder`，handler放到子类中去操作。
+    1. Added `TextureReader` to retrieve frame data through double buffered textures instead of using `ImageReader`.
+    2. Modify `GraphicDecoder`, the handler is placed in a subclass to operate.
 
 *  V1.0.2   `2018/03/14`
-    1. 新增抽象类`GraphicDecoder`，将条码解析模块进行抽离。
-    2. 新增`ZBarDecoder`，采用ZBar解析条码，并增加解析类型及解析精度设置。
-    3. 修改`ScannerFrameView`，扫描线动画由属性动画实现。
-    4. 修改`Camera2Scanner`，修复释放相机可能导致的异常，增加扫描框区域设置。
-    5. 其他微调。
+    1. Added abstract class `GraphicDecoder` to extract the decoding module.
+    2. Added `ZBarDecoder`, based on ZBar decoding, and increased decoding type and precision settings.
+    3. Modify `ScannerFrameView`, scanline animation is achieved by ValueAnimator.
+    4. Modify `Camera2Scanner` to fix the possible abnormalities caused by releasing the camera, and support setting scan box area.
 
 *  V1.0.1   `2018/02/09`
-    1. 新增`ScannerFrameLayout`，为`RelativeLayout`的子类，可对扫描框的位置和大小进行设置。
-    2. 修改`ScannerFrameView`，可对扫描框内部进行定制。
+    1. Add `ScannerFrameLayout`, extended from `RelativeLayout`, supports setting the scan box's position and size.
+    2. Modify `ScannerFrameView` to customize the inside of the scan box.
 
 *  V1.0.0   `2018/02/03`
-    初次提交代码。
+    Initial submission code.
 
 ## Author
 
