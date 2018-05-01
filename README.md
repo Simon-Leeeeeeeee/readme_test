@@ -2,7 +2,7 @@
 
 A new frame for decode QR code and bar code on Android. It's faster, simpler and more accurate. It's based on ZBar, compatible with Android4.0 (API14) and above.
 
-[中国人当然看中文的](https://github.com/Simon-Leeeeeeeee/XCodeScanner/blob/master/README_CN.md)
+[中国人当然看中文的](/README_CN.md)
 
 ## Catalog
 
