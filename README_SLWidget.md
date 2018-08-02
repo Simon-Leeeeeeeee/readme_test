@@ -4,11 +4,11 @@
 
 ## 目录
 
-* [BadgeView](#BadgeView)
-* [ScrollPicker](#ScrollPicker)
-* [AutoWrapLayout](#AutoWrapLayout)
-* [SwipeBack](#SwipeBack)
-* [Demo体验](#Demo体验)
+* [BadgeView](#badgeview)
+* [ScrollPicker](#scrollpicker)
+* [AutoWrapLayout](#autowraplayout)
+* [SwipeBack](#swipeback)
+* [Demo体验](#demo体验)
 
 ## BadgeView
 
