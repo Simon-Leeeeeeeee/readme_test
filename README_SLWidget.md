@@ -12,33 +12,25 @@
 
 ## BadgeView
 
-角标控件，可实现任意View的角标指示。支持字体、边距、背景、对齐方式等属性。
-
-[我有兴趣](https://github.com/Simon-Leeeeeeeee/SLWidget/tree/master/badgeview)
+角标控件，可实现任意View的角标指示。支持字体、边距、背景、对齐方式等属性。[详请](https://github.com/Simon-Leeeeeeeee/SLWidget/tree/master/badgeview)
 
 [![gif](/demo.gif)](http://fir.im/XCodeScanner  "示例效果")
 
 ## ScrollPicker
 
-滚动选择控件。仅支持文本显示，可设置行数、间距、颜色渐变、字体大小渐变等。
-
-[我有兴趣](https://github.com/Simon-Leeeeeeeee/SLWidget/tree/master/scrollpicker)
+滚动选择控件。仅支持文本显示，可设置行数、间距、颜色渐变、字体大小渐变等。[详请](https://github.com/Simon-Leeeeeeeee/SLWidget/tree/master/scrollpicker)
 
 [![gif](/demo.gif)](http://fir.im/XCodeScanner  "示例效果")
 
 ## AutoWrapLayout
 
-自动换行布局，ChildView横向排列并自动换行。可设置首行独占，指定网格尺寸、颜色、对齐方式等。
-
-[我有兴趣](https://github.com/Simon-Leeeeeeeee/SLWidget/tree/master/autowraplayout)
+自动换行布局，ChildView横向排列并自动换行。可设置首行独占，指定网格尺寸、颜色、对齐方式等。[详请](https://github.com/Simon-Leeeeeeeee/SLWidget/tree/master/autowraplayout)
 
 [![gif](/demo.gif)](http://fir.im/XCodeScanner  "示例效果")
 
 ## SwipeBack
 
-Activity侧滑辅助，支持Activity的侧滑返回操作，同时会启用状态栏透明。
-
-[我有兴趣](https://github.com/Simon-Leeeeeeeee/SLWidget/tree/master/swipeback)
+Activity侧滑辅助，支持Activity的侧滑返回操作，同时会启用状态栏透明。[详请](https://github.com/Simon-Leeeeeeeee/SLWidget/tree/master/swipeback)
 
 [![gif](/demo.gif)](http://fir.im/XCodeScanner  "示例效果")
 
